@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Quiz</title>
+    <link rel="stylesheet" type="text/css" href="quiz.css">
+</head>
+<body>
+
+<!-- HTML structure for quiz display -->
+<div>
+
+    <div id="quizCard">
+        <div id="imageContainer">
+            <img id="image" alt="Person Image">
+        </div>
+
+        <h4>Select or type matching properties</h4>
+        <!-- Input field for dynamic name entry -->
+        <input type="text" id="nameInput" placeholder="Type to search names" oninput="showSuggestions(this.value)">
+        <div id="suggestionContainer" class="suggestions"></div>
+
+        <input type="text" id="actionInput" placeholder="Type to search actions" oninput="showActionSuggestions(this.value)">
+        <div id="actionSuggestionContainer" class="suggestions"></div>
+
+        <!-- Object input -->
+        <input type="text" id="objectInput" placeholder="Type to search objects" oninput="showObjectSuggestions(this.value)">
+        <div id="objectSuggestionContainer" class="suggestions"></div>
+
+        <input type="text" id="cardInput" placeholder="Type to search cards" oninput="showCardSuggestions(this.value)">
+        <div id="cardSuggestionContainer" class="suggestions"></div>
+    </div>
+    </div>
+
+    <!-- Game buttons -->
+    <button class="restart-btn" onclick="restartPage()">RESTART</button>
+    <button class="next-btn" onclick="moveToNextCard()">NEXT</button>
+    <button class="reveal-btn" onclick="revealAnswers()">REVEAL</button>
+    <button class="matrix-btn" onclick="togglePopup()">MATRIX</button>
+
+    <!-- Auto Reveal Checkboxes outside the quiz card -->
+    <div id="autoRevealCheckboxes">
+        <h3>Auto Reveal</h3>
+        <label for="autoRevealNameCheckbox"></label>
+        <input type="checkbox" id="autoRevealNameCheckbox">
+
+        <label for="autoRevealActionCheckbox"></label>
+        <input type="checkbox" id="autoRevealActionCheckbox">
+
+        <label for="autoRevealObjectCheckbox"></label>
+        <input type="checkbox" id="autoRevealObjectCheckbox">
+
+        <label for="autoRevealcardsCheckbox"></label>
+        <input type="checkbox" id="autoRevealcardsCheckbox">
+    </div>
+    
+    <!--input labels-->
+    <div id="PAOLabels">
+        <h3>Person</h3>
+        <h3>Action</h3>
+        <h3>Object</h3>
+        <h3>Card</h3>
+    </div>
+</div>
+
+<div id="instructions">
+    <h1 style="color: orange;">CARD QUIZ</h1>
+
+    <div class="step">
+        <h2 style="color: orange;">STEP 1</h2>
+        <p style="margin-top: 15px; margin-bottom: 20px;">To get a new card, click NEXT. <br> the PAO properties, below the image.</p>
+    </div>
+
+    <div class="step">
+        <h2 style="color: orange;">STEP 2</h2>
+        <p style="margin-top: 20px; margin-bottom: 30px;">To see the answers, click REVEAL. <br> Use the instant reveal to auto-reveal values.</p>
+    </div>
+    
+    <div class="step">
+        <h2 style="color: orange;">Shortcuts</h2>
+        <h3 style="margin-bottom: 10px;">To open and close the matrix, press ctrl M.</h3>
+        <h3 style="margin-bottom: 10px;">To navigate to next card, press crtl N.</h3>
+        <h3 style="margin-bottom: 10px;">To reveal answers, press crtl B.</h3>
+        <h3 style="margin-bottom: 10px;">To restart game, press crtl R.</h3>
+    </div>
+
+    <div id="timer">Timer : 0m 0s</div>
+    
+<!-- Game finished message -->
+<h2 id="message"></h2>
+
+<div id="popup">
+  <span id="closeButton" onclick="closePopup()">Close</span>
+  <iframe src="matrix.html" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<script src="quiz.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+/* Add your styles here */
+body {
+  background-color: black;
+  color: white; /* Text color */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid white; /* Set border color for the entire table */
+}
+
+th, td {
+padding: 10px;
+text-align: center;
+border: 1px solid white; /* Set border color for table cells */
+width: 50px;
+}
+
+
+/* Style for the suits */
+.suit-cell {
+  font-size: 20px;
+}
+
+img {
+width: 100px;
+height: 150px;
+display: block;
+border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Add a border between action and object in each cell */
+td {
+  border-collapse: collapse;
+}
+
+td div {
+  border-bottom: 1px solid white;
+  padding: 5px; /* Optional: Add padding for better visual separation */
+  font-size: 12px;
+
+}
+
+/* Optional: Add padding to the cells for better spacing */
+td {
+  padding: 5px;
+}
